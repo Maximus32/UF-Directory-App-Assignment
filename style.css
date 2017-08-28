@@ -6,3 +6,7 @@
   max-height: 400px;
   overflow: auto;
 }
+
+.detailView {
+  display: inline-block;
+}
