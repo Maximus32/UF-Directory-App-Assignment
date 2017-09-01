@@ -1,12 +1,106 @@
-#searchBar {
-  margin: 15px 10px;
+
+body {
+	background-color: #0D0000 ;
 }
 
+/* Formatting for Header 1 Text*/
+h1 {
+	font-family: "Palatino Linotype" ;
+	font-variant: small-caps ;
+	color: #811012 ;
+	
+	text-align: center ;
+	
+	margin: 30px 20px ;
+}
+
+/* Formatting for Header 2 Text*/
+h2 {
+	font-family: "Palatino Linotype" ;
+}
+
+/* Formatting for Header 3 Text*/
+h3 {
+	font-family: "Consolas" ;
+	font-style: italic ;
+	color: #F7B658 ;
+	
+	text-align: right ;
+	float: right ;
+	
+	margin: 0 0 0 0 ;
+}
+
+/* Formatting for Paragraph Text*/
+p {
+	font-family: "Lucida Sans" ;
+}
+
+/* Search bar formatting */
+.searchBar {
+	margin: 15px 10px ;
+}
+
+/* Formatting table entries */
+td { color: #811012 }
+
+tr:nth-child(even) { background-color: #EDEDED }
+
 .tableWrapper {
-  max-height: 400px;
-  overflow: auto;
+	max-height: 525px ;
+	overflow: auto ;
+}
+
+.ListingCode {
+	font-weight: bold ;
+}
+
+/* formatting detailed view */
+.jumbotron {
+	padding: 10px 10px ;
+	
+	background-color: #630807 ;
 }
 
 .detailView {
-  display: inline-block;
+	display: inline-block ;
+}
+
+.detailText-header {
+	color: #0D0000 ;
+}
+
+.detailText {
+	color: #F7B658 ;
+}
+
+/* Formatting for the new listing form container*/
+.newListingForm-container {
+	border-style: inset ;
+	
+	float: right ;
+	
+	margin: 10px 20px 20px 10px ;
+	padding: 10px 20px 20px 10px ;
+}
+
+/* Formatting for the new listing form input box*/
+.newListingForm-box {
+	font-family: "Consolas" ;
+	
+	margin: 2px 2px 2px 2px ;
+	padding: 2px 2px 2px 2px ;
+}
+
+/* Formatting for the new listing input text*/
+.newListingForm-text {
+	font-family: "Consolas" ;
+	color: #811012 ;
+	
+	margin: 2px 2px 2px 2px ;
+	padding: 2px 2px 2px 2px ;
+}
+
+.input-group {
+	margin: 10px 20px 20px 10px ;
 }
