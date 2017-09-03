@@ -2,7 +2,7 @@
 var mongoose = require('mongoose'), 
     Schema = mongoose.Schema;
 
-/* Create your schema */
+/* Create your schema */ 
 var listingSchema = new Schema({
   /* your code here */
 });
