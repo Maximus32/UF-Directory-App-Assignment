@@ -1,31 +1,54 @@
-/* Fill out these functions using Mongoose queries*/
 
+// Imported modules/files
+var fs = require('fs'),
+    mongoose = require('mongoose'), 
+    Schema = mongoose.Schema, 
+    Listing = require('./ListingSchema.js'), 
+    config = require('./config');
+
+// Connect to database
+mongoose.connect(config.db.uri) ;
+
+// Finds and prints the listing pertaining to Library West
 var findLibraryWest = function() {
-  /* 
-    Find the document that contains data corresponding to Library West,
-    then log it to the console. 
-   */
-};
+	Listing.find( { code: 'LBW' }, function(err, listings) {
+		if (err) throw err ;
+		
+		console.log(listings[0]) ;
+	}) ;
+} ;
+
+// Deletes listings pertaining to cable TV
 var removeCable = function() {
-  /*
-    Find the document with the code 'CABL'. This cooresponds with courses that can only be viewed 
-    on cable TV. Since we live in the 21st century and most courses are now web based, go ahead
-    and remove this listing from your database and log the document to the console. 
-   */
-};
-var updatePhelpsMemorial = function() {
-  /*
-    Phelps Memorial Hospital Center's address is incorrect. Find the listing, update it, and then 
-    log the updated document to the console. 
-   */
-};
-var retrieveAllListings = function() {
-  /* 
-    Retrieve all listings in the database, and log them to the console. 
-   */
+	Listing.find( { code: 'CABL' }, function(err, listings) {
+		if (err) throw err ;
+		
+		listings[0].remove(function(err) {
+			if (err) throw err ;
+			
+			console.log(listings[0]) ;
+			console.log('The above document was successfully removed') ;
+		}) ;
+	}) ;
 };
 
-findLibraryWest();
-removeCable();
-updatePhelpsMemorial();
-retrieveAllListings();
+// Finds the listing pertaining to the Phelps Laboratory and updates its address
+var updatePhelpsMemorial = function() {
+	Listing.find( { code: 'PHL' }, function(err, listings) {
+		if (err) throw err ;
+		
+		listings[0].address = '1953 MUSEUM RD, GAINESVILLE, FL 32611' ;
+		
+		console.log('The following document\'s address has been updated') ;
+		console.log(listings[0]) ;
+	}) ;
+};
+
+// Fetches all listings
+var retrieveAllListings = function() {
+	Listing.find( {}, function(err, listings) {
+		if (err) throw err ;
+		
+		console.log(listings) ;
+	}) ;
+};
