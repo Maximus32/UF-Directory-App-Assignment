@@ -7,7 +7,7 @@ var fs = require('fs'),
     Listing = require('./ListingSchema.js'), 
     config = require('./config');
 
-// Connect to database
+// Connect to database 
 mongoose.connect(config.db.uri) ;
 
 // Call 'readFile' method, parse data, and add to the database
